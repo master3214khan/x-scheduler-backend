@@ -79,12 +79,13 @@ app.post('/api/schedule', (req, res) => {
 });
 
 // Queue check route
-app.get('/api/queue', (req, res) => {
-  res.json(postQueue);
-});
-app.listen(3001, () => {
+ app.get('/api/queue', (req, res) => {
+    res.json(postQueue);
+  });
+  app.delete('/api/queue', (req, res) => {
+  postQueue = [];
+  res.json({ success: true, message: 'Queue cleared' });
+ });
+  app.listen(3001, () => {
   console.log('🚀 Backend running on http://localhost:3001');
-});
-app.listen(3001, () => {
-  console.log('🚀 Backend running on http://localhost:3001');
-});
+  });
