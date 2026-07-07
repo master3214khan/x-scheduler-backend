@@ -82,7 +82,9 @@ app.post('/api/schedule', (req, res) => {
 app.get('/api/queue', (req, res) => {
   res.json(postQueue);
 });
-
+app.listen(3001, () => {
+  console.log('🚀 Backend running on http://localhost:3001');
+});
 app.listen(3001, () => {
   console.log('🚀 Backend running on http://localhost:3001');
 });
